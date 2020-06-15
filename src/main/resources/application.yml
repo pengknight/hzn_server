@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    #    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  #    database-platform: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.17.0.1:3306/hz
+    username: root
+    password: yp*8388608
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+  redis:
+    password: yp*8388608
+  thymeleaf:
+    cache: false
+#baseurl: "http://47.104.232.176:8888"
+baseUrl: "http://106.13.164.229:3308"
+#  security:
+#    user:
+#      name: yp
+#      password: 123
+#      roles: admin
+server:
+  port: 8080

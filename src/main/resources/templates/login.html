@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+
+<head>
+    <title>信息互转</title>
+
+    <!-- Custom Theme files -->
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<body>
+<div class="login">
+    <!-- <h2>Acced Form</h2> -->
+    <div class="login-top">
+        <h1>万果园信息互转系统</h1>
+        <form action="#" th:action="@{/login}" method="post">
+            <input type="text" name="username" value="用户名" onfocus="this.value = '';"
+                   onblur="if (this.value === '') {this.value = '用户名';}"/>
+            <input type="password" name="password" value="password" onfocus="this.value = '';"
+                   onblur="if (this.value === '') {this.value = 'password';}"/>
+            <div class="forgot">
+                <input type="submit" value="登陆">
+            </div>
+            <p th:if="${param.error}" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"></p>
+        </form>
+    </div>
+    <div class="login-bottom">
+        <p>Copyright &copy; 2020.万果园信息部</p>
+    </div>
+</div>
+</body>
+
+</html>
